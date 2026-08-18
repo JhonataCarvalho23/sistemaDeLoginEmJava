@@ -9,29 +9,11 @@ const toastMessage = document.getElementById("toastMessage");
 
 
 /* =========================
-   TROCAR LOGIN / CADASTRO
+   NAVEGAÇÃO ENTRE PÁGINAS
 ========================= */
 
-showRegister.addEventListener("click", () => {
-
-    loginForm.classList.remove("active");
-
-    setTimeout(() => {
-        registerForm.classList.add("active");
-    }, 100);
-
-});
-
-
-showLogin.addEventListener("click", () => {
-
-    registerForm.classList.remove("active");
-
-    setTimeout(() => {
-        loginForm.classList.add("active");
-    }, 100);
-
-});
+// Login e cadastro agora são páginas separadas.
+// A navegação é feita pelos links do HTML.
 
 
 /* =========================
@@ -77,6 +59,8 @@ const strengthBars =
 const strengthText =
     document.getElementById("strengthText");
 
+
+if (passwordInput) {
 
 passwordInput.addEventListener("input", () => {
 
@@ -139,6 +123,8 @@ passwordInput.addEventListener("input", () => {
 
 });
 
+}
+
 
 /* =========================
    LOADING
@@ -188,7 +174,7 @@ function showToast(message) {
    LOGIN
 ========================= */
 
-loginForm.addEventListener("submit", async (event) => {
+if (loginForm) loginForm.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
@@ -252,7 +238,7 @@ loginForm.addEventListener("submit", async (event) => {
    CADASTRO
 ========================= */
 
-registerForm.addEventListener("submit", async (event) => {
+if (registerForm) registerForm.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Login</title>
+    <title>Nova — Criar conta</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="frontEnd/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
@@ -22,27 +22,21 @@
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
-
         <div class="grid"></div>
     </div>
 
     <main class="container">
-
         <section class="auth-card">
 
-            <!-- LADO ESQUERDO -->
             <div class="brand-section">
 
                 <div class="brand">
-                    <div class="brand-icon">
-                        N
-                    </div>
-
+                    <div class="brand-icon">N</div>
                     <span>NOVA</span>
                 </div>
 
                 <div class="brand-content">
-                    <span class="badge">WELCOME BACK</span>
+                    <span class="badge">JOIN NOVA</span>
 
                     <h1>
                         Seu espaço.
@@ -51,7 +45,7 @@
                     </h1>
 
                     <p>
-                        Entre na sua conta e continue de onde parou.
+                        Crie sua conta e comece sua experiência com a Nova.
                     </p>
                 </div>
 
@@ -71,26 +65,43 @@
 
             </div>
 
-
-            <!-- LADO DIREITO -->
             <div class="form-section">
-
-                <!-- LOGIN -->
-                <form id="loginForm" class="auth-form active">
+                <form id="registerForm" class="auth-form active">
 
                     <div class="form-header">
                         <span class="mobile-logo">N</span>
 
-                        <h2>Bem-vindo de volta</h2>
+                        <h2>Crie sua conta</h2>
 
                         <p>
-                            Entre para acessar sua conta.
+                            Comece sua experiência com a Nova.
                         </p>
                     </div>
 
 
                     <div class="input-group">
-                        <label for="loginEmail">
+                        <label for="registerName">
+                            Nome
+                        </label>
+
+                        <div class="input-wrapper">
+                            <span class="input-icon">
+                                ◇
+                            </span>
+
+                            <input
+                                type="text"
+                                id="registerName"
+                                placeholder="Seu nome"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="registerEmail">
                             E-mail
                         </label>
 
@@ -101,7 +112,7 @@
 
                             <input
                                 type="email"
-                                id="loginEmail"
+                                id="registerEmail"
                                 placeholder="seu@email.com"
                                 autocomplete="email"
                                 required
@@ -111,15 +122,9 @@
 
 
                     <div class="input-group">
-                        <div class="label-row">
-                            <label for="loginPassword">
-                                Senha
-                            </label>
-
-                            <a href="#" class="forgot-password">
-                                Esqueceu a senha?
-                            </a>
-                        </div>
+                        <label for="registerPassword">
+                            Senha
+                        </label>
 
                         <div class="input-wrapper">
                             <span class="input-icon">
@@ -128,16 +133,16 @@
 
                             <input
                                 type="password"
-                                id="loginPassword"
-                                placeholder="Digite sua senha"
-                                autocomplete="current-password"
+                                id="registerPassword"
+                                placeholder="Crie uma senha"
+                                autocomplete="new-password"
                                 required
                             >
 
                             <button
                                 type="button"
                                 class="password-toggle"
-                                data-target="loginPassword"
+                                data-target="registerPassword"
                             >
                                 ◉
                             </button>
@@ -145,20 +150,39 @@
                     </div>
 
 
-                    <label class="remember">
-                        <input type="checkbox">
+                    <div class="password-strength">
+
+                        <div class="strength-bars">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <span id="strengthText">
+                            Digite uma senha
+                        </span>
+
+                    </div>
+
+
+                    <label class="terms">
+                        <input type="checkbox" required>
 
                         <span class="custom-checkbox"></span>
 
                         <span>
-                            Lembrar de mim
+                            Eu concordo com os
+                            <a href="#">Termos de Uso</a>
+                            e
+                            <a href="#">Política de Privacidade</a>.
                         </span>
                     </label>
 
 
                     <button class="submit-button" type="submit">
                         <span class="button-text">
-                            Entrar
+                            Criar minha conta
                         </span>
 
                         <span class="loader"></span>
@@ -169,41 +193,18 @@
                     </button>
 
 
-                    <div class="divider">
-                        <span>ou continue com</span>
-                    </div>
-
-
-                    <div class="social-buttons">
-
-                        <button type="button" class="social-button">
-                            <span>G</span>
-                            Google
-                        </button>
-
-                        <button type="button" class="social-button">
-                            <span>⌘</span>
-                            GitHub
-                        </button>
-
-                    </div>
-
-
                     <p class="switch-form">
-                        Ainda não possui uma conta?
+                        Já possui uma conta?
 
-                        <a href="frontEnd/pages/register.html" class="switch-link">Criar conta</a>
+                        <a href="../../index.html" class="switch-link">
+                            Fazer login
+                        </a>
                     </p>
 
                 </form>
-
-
-                
-
             </div>
 
         </section>
-
     </main>
 
     <div id="toast" class="toast">
@@ -211,7 +212,7 @@
         <span id="toastMessage">Mensagem</span>
     </div>
 
-    <script src="frontEnd/js/script.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
 </html>
